@@ -1,8 +1,11 @@
 import './App.css';
 import Navbar from './Components/Navbar'
 import Container from './Components/Container'
+import {useState} from 'react'
 
 function App() {
+  const [language, setLanguage] = useState("cpp");
+
   const containerStyle = {
     display: "flex",
     flexDirection: "row",
@@ -24,10 +27,11 @@ function App() {
     // border: "2px solid red"
   }
 
+
   return (
     <>
       <Navbar title="Code Formatter" />
-      <Container containerStyle={containerStyle} textAreaStyle={textAreaStyle} buttonsStyle={buttonsStyle}/>
+      <Container containerStyle={containerStyle} textAreaStyle={textAreaStyle} buttonsStyle={buttonsStyle} language={language} setLanguage={setLanguage} />
     </>
   );
 }
